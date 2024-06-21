@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\TransactionList;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
@@ -11,5 +12,5 @@ Route::view('dashboard', 'dashboard')
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
-
+Route::view('/transactions', TransactionList::class)->name('transactions');
 require __DIR__.'/auth.php';
